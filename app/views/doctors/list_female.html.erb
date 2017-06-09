@@ -1,0 +1,33 @@
+<table>
+
+  <thead>
+
+    <th>first name</th>
+    <th>last name</th>
+    <th>address</th>
+    <th>gender</th>
+    <th></th>
+    <th></th>
+
+  </thead>
+
+  <tbody>
+
+    <% @doctors.each do |doctor| %>
+
+      <tr>
+
+        <td><%= doctor.first_name %></td>
+        <td><%= doctor.last_name %></td>
+        <td><%= doctor.gender %></td>
+        <td><%= doctor.address %></td>
+        <td><%= link_to 'Edit', edit_doctor_path(doctor) %></td>
+        <td><%= link_to 'Delete', doctor_path(doctor), method: :delete %></td>
+
+      </tr>
+
+    <% end %>
+
+  </tbody>
+
+</table>
